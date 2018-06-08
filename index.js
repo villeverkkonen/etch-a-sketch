@@ -1,4 +1,9 @@
 window.onload = function() {
+	createSketch();
+}
+
+function createSketch() {
+	document.getElementById("content").innerHTML = "";
 	setButtons();
 	setGrid();
 }
@@ -12,7 +17,7 @@ function setButtons() {
 	addModeTextToButtonsElement(buttonsElement);
 	addShapeTextToButtonsElement(buttonsElement);
 
-	// Default Mode
+	// Default Mode button
 	const buttonDefault = document.createElement("button");
 	buttonDefault.setAttribute("class", "button");
 	buttonDefault.setAttribute("id", "buttonDefault");
@@ -20,7 +25,7 @@ function setButtons() {
 	buttonDefault.innerHTML = "Default Mode";
 	buttonsElement.appendChild(buttonDefault);
 
-	// Color Mode
+	// Color Mode button
 	const buttonColor = document.createElement("button");
 	buttonColor.setAttribute("class", "button");
 	buttonColor.setAttribute("id", "buttonColor");
@@ -28,7 +33,7 @@ function setButtons() {
 	buttonColor.innerHTML = "Color Mode";
 	buttonsElement.appendChild(buttonColor);
 
-	// Square Mode
+	// Square Shape button
 	const buttonSquare = document.createElement("button");
 	buttonSquare.setAttribute("class", "button");
 	buttonSquare.setAttribute("id", "buttonSquare");
@@ -36,13 +41,21 @@ function setButtons() {
 	buttonSquare.innerHTML = "Square Shape";
 	buttonsElement.appendChild(buttonSquare);
 
-	// Round Mode
+	// Round Shape button
 	const buttonRound = document.createElement("button");
 	buttonRound.setAttribute("class", "button");
 	buttonRound.setAttribute("id", "buttonRound");
 	buttonRound.setAttribute("onclick", "changeShape('round')");
 	buttonRound.innerHTML = "Round Shape";
 	buttonsElement.appendChild(buttonRound);
+
+	// New Sketch button
+	const buttonSketch = document.createElement("button");
+	buttonSketch.setAttribute("class", "button");
+	buttonSketch.setAttribute("id", "buttonSketch");
+	buttonSketch.setAttribute("onclick", "createSketch()");
+	buttonSketch.innerHTML = "New Sketch";
+	buttonsElement.appendChild(buttonSketch);
 
 	content.appendChild(buttonsElement);
 }

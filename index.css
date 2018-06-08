@@ -19,7 +19,7 @@ div#content {
 }
 
 div#buttons {
-	margin-left: 50px;
+	text-align: center;
 	margin-bottom: 10px;
 }
 
@@ -30,6 +30,7 @@ div#buttons button {
 
 div#buttons button:hover {
 	background-color: gray;
+	cursor: cell;
 }
 
 div#buttons #buttonDefault {
@@ -37,14 +38,18 @@ div#buttons #buttonDefault {
 }
 
 div#tile-box {
-	/*grid-template-columns: repeat(12, auto);
-    grid-template-rows: repeat(12, auto);*/
+	/*grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);*/
 	background-color: white;
 	width: fit-content;
 	height: fit-content;
 	display: inline-grid;
 	border-radius: 20px;
 	border: 20px solid black;
+}
+
+div#tile-box:hover {
+	cursor: crosshair;
 }
 
 .tile {
