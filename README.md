@@ -1,6 +1,8 @@
 # Etch-a-Sketch
 
 Etch-a-Sketch for The Odin Project.
+<br />
+Hover your mouse over the sketch to color it.
 
 ## Two modes and shapes
 
