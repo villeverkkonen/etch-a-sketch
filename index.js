@@ -38,6 +38,22 @@ function setButtons() {
 	buttonColor.innerHTML = "Color Mode";
 	buttonsElement.appendChild(buttonColor);
 
+	// Square Mode
+	const buttonSquare = document.createElement("button");
+	buttonSquare.setAttribute("class", "button");
+	buttonSquare.setAttribute("id", "buttonSquare");
+	buttonSquare.setAttribute("onclick", "changeShape('square')");
+	buttonSquare.innerHTML = "Square Mode";
+	buttonsElement.appendChild(buttonSquare);
+
+	// Round Mode
+	const buttonRound = document.createElement("button");
+	buttonRound.setAttribute("class", "button");
+	buttonRound.setAttribute("id", "buttonRound");
+	buttonRound.setAttribute("onclick", "changeShape('round')");
+	buttonRound.innerHTML = "Round Mode";
+	buttonsElement.appendChild(buttonRound);
+
 	content.appendChild(buttonsElement);
 }
 
@@ -100,4 +116,17 @@ function changeColor(e) {
 	}
 
 	return newColor;
+}
+
+function changeShape(shape) {
+	const tiles = document.querySelectorAll(".tile");
+	if (shape === "square") {
+		[].forEach.call(tiles, function(tile) {
+		  tile.style.borderRadius = "0px";
+		});
+	} else if (shape === "round") {
+		[].forEach.call(tiles, function(tile) {
+		  tile.style.borderRadius = "20px";
+		});
+	}
 }

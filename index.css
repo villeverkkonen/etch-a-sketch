@@ -23,16 +23,28 @@ div#buttons {
 	margin-bottom: 10px;
 }
 
+div#buttons button {
+	padding: 5px;
+	margin-left: 5px;
+}
+
+div#buttons button:hover {
+	background-color: gray;
+}
+
+div#buttons #buttonDefault {
+	margin-left: 0;
+}
+
 div#tile-box {
 	/*grid-template-columns: repeat(16, auto);
     grid-template-rows: repeat(16, auto);*/
 	background-color: white;
 	width: fit-content;
 	height: fit-content;
-	margin-bottom: 50px;
-	margin-left: 50px;
-	margin-right: 50px;
 	display: inline-grid;
+	border-radius: 20px;
+	border: 20px solid black;
 }
 
 .tile {
