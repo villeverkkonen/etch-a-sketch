@@ -37,8 +37,8 @@ div#buttons #buttonDefault {
 }
 
 div#tile-box {
-	/*grid-template-columns: repeat(16, auto);
-    grid-template-rows: repeat(16, auto);*/
+	/*grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(12, auto);*/
 	background-color: white;
 	width: fit-content;
 	height: fit-content;
@@ -54,5 +54,9 @@ div#tile-box {
 }
 
 #mode-element {
+	color: white;
+}
+
+#shape-element {
 	color: white;
 }

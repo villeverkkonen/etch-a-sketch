@@ -9,18 +9,8 @@ function setButtons() {
 	buttonsElement.setAttribute("id", "buttons");
 	buttonsElement.setAttribute("class", "buttons");
 
-	const p = document.createElement("p");
-	p.setAttribute("id", "mode-element");
-	const span1 = document.createElement("span");
-	const span2 = document.createElement("span");
-	span2.setAttribute("id", "mode");
-	const text1 = document.createTextNode("Current mode is: ");
-	const text2 = document.createTextNode("Default Mode");
-	span1.appendChild(text1);
-	span2.appendChild(text2);
-	p.appendChild(span1);
-	p.appendChild(span2);
-	buttonsElement.appendChild(p);
+	addModeTextToButtonsElement(buttonsElement);
+	addShapeTextToButtonsElement(buttonsElement);
 
 	// Default Mode
 	const buttonDefault = document.createElement("button");
@@ -43,7 +33,7 @@ function setButtons() {
 	buttonSquare.setAttribute("class", "button");
 	buttonSquare.setAttribute("id", "buttonSquare");
 	buttonSquare.setAttribute("onclick", "changeShape('square')");
-	buttonSquare.innerHTML = "Square Mode";
+	buttonSquare.innerHTML = "Square Shape";
 	buttonsElement.appendChild(buttonSquare);
 
 	// Round Mode
@@ -51,10 +41,40 @@ function setButtons() {
 	buttonRound.setAttribute("class", "button");
 	buttonRound.setAttribute("id", "buttonRound");
 	buttonRound.setAttribute("onclick", "changeShape('round')");
-	buttonRound.innerHTML = "Round Mode";
+	buttonRound.innerHTML = "Round Shape";
 	buttonsElement.appendChild(buttonRound);
 
 	content.appendChild(buttonsElement);
+}
+
+function addModeTextToButtonsElement(buttonsElement) {
+	const p = document.createElement("p");
+	p.setAttribute("id", "mode-element");
+	const span1 = document.createElement("span");
+	const span2 = document.createElement("span");
+	span2.setAttribute("id", "mode");
+	const textMode1 = document.createTextNode("Current mode is: ");
+	const textMode2 = document.createTextNode("Default Mode");
+	span1.appendChild(textMode1);
+	span2.appendChild(textMode2);
+	p.appendChild(span1);
+	p.appendChild(span2);
+	buttonsElement.appendChild(p);
+}
+
+function addShapeTextToButtonsElement(buttonsElement) {
+	const p = document.createElement("p");
+	p.setAttribute("id", "shape-element");
+	const span1 = document.createElement("span");
+	const span2 = document.createElement("span");
+	span2.setAttribute("id", "shape");
+	const shapeMode1 = document.createTextNode("Current shape is: ");
+	const shapeMode2 = document.createTextNode("Square Shape");
+	span1.appendChild(shapeMode1);
+	span2.appendChild(shapeMode2);
+	p.appendChild(span1);
+	p.appendChild(span2);
+	buttonsElement.appendChild(p);
 }
 
 function activateButton(id) {
@@ -124,9 +144,14 @@ function changeShape(shape) {
 		[].forEach.call(tiles, function(tile) {
 		  tile.style.borderRadius = "0px";
 		});
+		const shape = document.getElementById("shape");
+		shape.innerHTML = "Square Shape";
+
 	} else if (shape === "round") {
 		[].forEach.call(tiles, function(tile) {
 		  tile.style.borderRadius = "20px";
 		});
+		const shape = document.getElementById("shape");
+		shape.innerHTML = "Round Shape";
 	}
 }
