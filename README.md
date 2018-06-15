@@ -1,5 +1,7 @@
 # Etch-a-Sketch
 
+Try it out: https://villeverkkonen.github.io/etch-a-sketch/
+
 Etch-a-Sketch for The Odin Project.
 <br />
 Hover your mouse over the sketch to color it.
