@@ -6,6 +6,8 @@ Etch-a-Sketch for The Odin Project.
 <br />
 Hover your mouse over the sketch to color it.
 
+[etch-a-sketch](https://github.com/villeverkkonen/etch-a-sketch/blob/master/etch-a-sketch.png)
+
 ## Two modes and shapes
 
 ### Default Mode:
