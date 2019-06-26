@@ -1,14 +1,14 @@
-window.onload = function() {
+window.onload = () => {
 	createSketch();
 }
 
-function createSketch() {
+createSketch = () => {
 	document.getElementById("content").innerHTML = "";
 	setButtons();
 	setGrid();
 }
 
-function setButtons() {
+setButtons = () => {
 	const content = document.getElementById("content");
 	const buttonsElement = document.createElement("div");
 	buttonsElement.setAttribute("id", "buttons");
@@ -60,7 +60,7 @@ function setButtons() {
 	content.appendChild(buttonsElement);
 }
 
-function addModeTextToButtonsElement(buttonsElement) {
+addModeTextToButtonsElement = buttonsElement => {
 	const p = document.createElement("p");
 	p.setAttribute("id", "mode-element");
 	const span1 = document.createElement("span");
@@ -75,7 +75,7 @@ function addModeTextToButtonsElement(buttonsElement) {
 	buttonsElement.appendChild(p);
 }
 
-function addShapeTextToButtonsElement(buttonsElement) {
+addShapeTextToButtonsElement = buttonsElement => {
 	const p = document.createElement("p");
 	p.setAttribute("id", "shape-element");
 	const span1 = document.createElement("span");
@@ -90,21 +90,21 @@ function addShapeTextToButtonsElement(buttonsElement) {
 	buttonsElement.appendChild(p);
 }
 
-function activateButton(id) {
+activateButton = id => {
 	const mode = document.getElementById("mode");
 	const button = document.getElementById(id);
 	mode.innerHTML = button.innerHTML;
 }
 
-function setGrid() {
+setGrid = () => {
 	const content = document.getElementById("content");
 	const tileBox = document.createElement("div");
 	tileBox.setAttribute("id", "tile-box");
 	tileBox.setAttribute("class", "tile-box");
 
-    const tilesPerSide = 16;
-    tileBox.style.gridTemplateColumns = "repeat(" + tilesPerSide + ", auto)";
-    tileBox.style.gridTemplateRows = "repeat(" + tilesPerSide + ", auto)";
+  const tilesPerSide = 16;
+  tileBox.style.gridTemplateColumns = "repeat(" + tilesPerSide + ", auto)";
+  tileBox.style.gridTemplateRows = "repeat(" + tilesPerSide + ", auto)";
 
 	for (let i = 0; i < tilesPerSide * tilesPerSide; i++) {
 		const div = document.createElement("div");
@@ -117,17 +117,16 @@ function setGrid() {
 	setHoverEffects();
 }
 
-function setHoverEffects() {
+setHoverEffects = () => {
 	const tiles = document.querySelectorAll('.tile');
-    let tile;
-    tiles.forEach((tile) => {
-        tile.addEventListener('mouseenter', (e) => {
-            tile.style.background = changeColor(e);
-        });
-    });
+  tiles.forEach(tile => {
+      tile.addEventListener('mouseenter', (e) => {
+          tile.style.background = changeColor(e);
+      });
+  });
 }
 
-function changeColor(e) {
+changeColor = e => {
 	const currentColor = e.target['style']["background-color"];
 	const current_mode = document.getElementById("mode").innerHTML;
 	let newColor;
@@ -147,19 +146,17 @@ function changeColor(e) {
 		const randomNum3 = Math.floor(Math.random() * 256);
 		newColor = "rgb(" + randomNum1 + "," + randomNum2 + "," + randomNum3 + ")";
 	}
-
 	return newColor;
 }
 
-function changeShape(shape) {
+changeShape = shape => {
 	const tiles = document.querySelectorAll(".tile");
 	if (shape === "square") {
-		[].forEach.call(tiles, function(tile) {
+		[].forEach.call(tiles, tile => {
 		  tile.style.borderRadius = "0px";
 		});
 		const shape = document.getElementById("shape");
 		shape.innerHTML = "Square Shape";
-
 	} else if (shape === "round") {
 		[].forEach.call(tiles, function(tile) {
 		  tile.style.borderRadius = "20px";
